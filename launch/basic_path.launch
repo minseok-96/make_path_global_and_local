@@ -1,0 +1,11 @@
+
+<launch>
+	<node pkg="make_path_global_and_local" type="gps_imu_parser_node.py" name="gps_imu_parser"/>
+
+	<node pkg="make_path_global_and_local" type="global_path_planning.py" name="global_path_planning" />
+
+	<node pkg="change_line" type="change_lines.py" name="change_lines" />
+	
+	
+	<node type="rviz" name="rviz" pkg="rviz" args="-d $(find path_rviz)/rviz/path.rviz" />
+</launch>
